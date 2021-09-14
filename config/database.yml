@@ -16,7 +16,8 @@ default: &default
   username: root
   password: Ace071101
   socket: /tmp/mysql.sock
-
+  
+  
 development:
   <<: *default
   database: instagram_clone_app_development

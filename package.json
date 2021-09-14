@@ -1,5 +1,7 @@
 {
   "name": "instagram_clone_app",
   "private": true,
-  "dependencies": {}
+  "dependencies": {
+    "bootstrap-material-design": "^4.1.1"
+  }
 }

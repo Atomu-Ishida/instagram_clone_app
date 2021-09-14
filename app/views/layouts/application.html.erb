@@ -5,11 +5,25 @@
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.11.2/css/all.css" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" />
+    <link rel="stylesheet" href="<%= config.asset_host %>/css/mdb.min.css?v3.1.0" />
+
     <%= stylesheet_link_tag    'application', media: 'all' %>
     <%= javascript_include_tag 'application' %>
+    <!-- Font Awesome -->
   </head>
 
   <body>
+    
+    <% if logged_in? %>
+      <%= render 'shared/header' %>
+    <% else %>
+      <%= render 'shared/before_login_header' %>  
+    <% end %>
+    <%= render 'shared/flash_messages' %>
+    
     <%= yield %>
   </body>
+  <script type="text/javascript" src="<%= config.asset_host %>/js/mdb.min.js?v3.1.0"></script>
 </html>
