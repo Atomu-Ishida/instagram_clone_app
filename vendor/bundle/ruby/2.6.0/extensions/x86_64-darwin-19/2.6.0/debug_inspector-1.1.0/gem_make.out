@@ -1,0 +1,15 @@
+current directory: /Users/ishidaatomu/instagram_clone/instagram_clone_app/vendor/bundle/ruby/2.6.0/gems/debug_inspector-1.1.0/ext/debug_inspector
+/Users/ishidaatomu/.rbenv/versions/2.6.3/bin/ruby -I /Users/ishidaatomu/.rbenv/versions/2.6.3/lib/ruby/2.6.0 -r ./siteconf20210912-85140-vt75zd.rb extconf.rb
+creating Makefile
+
+current directory: /Users/ishidaatomu/instagram_clone/instagram_clone_app/vendor/bundle/ruby/2.6.0/gems/debug_inspector-1.1.0/ext/debug_inspector
+make "DESTDIR=" clean
+
+current directory: /Users/ishidaatomu/instagram_clone/instagram_clone_app/vendor/bundle/ruby/2.6.0/gems/debug_inspector-1.1.0/ext/debug_inspector
+make "DESTDIR="
+compiling debug_inspector.c
+linking shared-object debug_inspector.bundle
+
+current directory: /Users/ishidaatomu/instagram_clone/instagram_clone_app/vendor/bundle/ruby/2.6.0/gems/debug_inspector-1.1.0/ext/debug_inspector
+make "DESTDIR=" install
+/usr/bin/install -c -m 0755 debug_inspector.bundle ./.gem.20210912-85140-duxupc
