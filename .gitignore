@@ -25,6 +25,6 @@
 
 # Ignore master key for decrypting credentials and more.
 /config/master.key
-
-#gemファイルを管理しない
-vendor/bundle
+/vendor
+/config/database.yml
+/public/uploads
