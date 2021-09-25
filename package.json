@@ -2,6 +2,12 @@
   "name": "instagram_clone_app",
   "private": true,
   "dependencies": {
-    "bootstrap-material-design": "^4.1.1"
-  }
+    "bootstrap-material-design": "^4.1.1",
+    "swiper": "^7.0.6"
+  },
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/Atomu-Ishida/instagram_clone_app.git",
+  "author": "Atomu-Ishida <atomu.10.18@icloud.com>",
+  "license": "MIT"
 }

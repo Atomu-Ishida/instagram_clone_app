@@ -11,7 +11,6 @@
 
     <%= stylesheet_link_tag    'application', media: 'all' %>
     <%= javascript_include_tag 'application' %>
-    <!-- Font Awesome -->
   </head>
 
   <body>
@@ -22,8 +21,10 @@
       <%= render 'shared/before_login_header' %>  
     <% end %>
     <%= render 'shared/flash_messages' %>
-    
-    <%= yield %>
+    <main>
+      <%= yield %>
+      <script src="../package/swiper-bundle.js"></script>
   </body>
   <script type="text/javascript" src="<%= config.asset_host %>/js/mdb.min.js?v3.1.0"></script>
+  
 </html>
