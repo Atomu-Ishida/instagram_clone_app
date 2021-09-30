@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'likes/create'
+  get 'likes/destroy'
   root 'posts#index'
 
   resources :users
@@ -9,4 +11,5 @@ Rails.application.routes.draw do
   resources :posts, shallow: true do
     resources :comments
   end
+  resources :likes, only: %i[create destroy]
 end
