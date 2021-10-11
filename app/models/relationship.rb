@@ -2,23 +2,25 @@
 #
 # Table name: relationships
 #
-#  id          :bigint           not null, primary key
-#  created_at  :datetime         not null
-#  updated_at  :datetime         not null
-#  followed_id :integer          not null
-#  follower_id :integer          not null
+#  id           :bigint           not null, primary key
+#  created_at   :datetime         not null
+#  updated_at   :datetime         not null
+#  follower_id  :integer          not null
+#  following_id :integer          not null
 #
 # Indexes
 #
-#  index_relationships_on_followed_id                  (followed_id)
-#  index_relationships_on_follower_id                  (follower_id)
-#  index_relationships_on_follower_id_and_followed_id  (follower_id,followed_id) UNIQUE
+#  index_relationships_on_follower_id                   (follower_id)
+#  index_relationships_on_following_id                  (following_id)
+#  index_relationships_on_following_id_and_follower_id  (following_id,follower_id) UNIQUE
 #
 class Relationship < ApplicationRecord
+  belongs_to :following, class_name: 'User'
   belongs_to :follower, class_name: 'User'
-  belongs_to :followed, class_name: 'User'
+
+
+  validates :following_id, presence: true
   validates :follower_id, presence: true
-  validates :followed_id, presence: true
-  validates :follower_id, uniqueness: {scope: :followed_id}
+  validates :following_id, uniqueness: {scope: :follower_id}
 
 end
