@@ -28,6 +28,15 @@ class User < ApplicationRecord
   has_many :likes, dependent: :destroy
   has_many :like_posts, through: :likes, source: :post
 
+  has_many :active_relationships, class_name: 'Relationship', foreign_key: 'following_id', dependent: :destroy
+  has_many :followings, through: :active_relationships, source: :follower
+
+  has_many :passive_relationships, class_name: 'Relationship', foreign_key: 'follower_id', dependent: :destroy
+  has_many :followers, through: :passive_relationships, source: :following
+
+  
+  scope :recent, ->(count) { order(created_at: :desc).limit(count) }
+
 
   def own?(object)
     id == object.user_id
@@ -43,5 +52,21 @@ class User < ApplicationRecord
 
   def like?(post)
     like_posts.include?(post)
+  end
+
+  def follow(other_user)
+    followings << other_user
+  end
+
+  def unfollow(other_user)
+    followings.delete(other_user)
+  end
+
+  def following?(other_user)
+    followings.include?(other_user)
+  end
+
+  def feed
+    Post.where(user_id: following_ids << id)
   end
 end
